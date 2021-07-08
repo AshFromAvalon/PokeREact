@@ -1,0 +1,26 @@
+@import "../../style/styles.scss";
+
+.main {
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  header,
+  footer {
+    padding: 2rem 0;
+    background-color: hotpink;
+  }
+
+  .main-container {
+    display: flex;
+    height: 80%;
+    .list {
+      overflow-y: auto;
+      width: 80%;
+    }
+  }
+}

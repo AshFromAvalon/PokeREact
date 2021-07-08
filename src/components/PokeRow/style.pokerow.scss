@@ -1,0 +1,14 @@
+@import "../../style/styles.scss";
+
+.row {
+  padding: 2rem 3rem;
+}
+
+.split {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-image {
+  max-width: 100px;
+}

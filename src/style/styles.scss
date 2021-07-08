@@ -1,0 +1,21 @@
+@import "mixins";
+@import "variables";
+
+body {
+  font-family: $ff-main;
+  scrollbar-width: none;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.btn {
+  border: none;
+  font-size: 1rem;
+  padding: 0.5em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: inherit;
+  margin: 0.25em 0;
+  border-radius: 5px;
+}
