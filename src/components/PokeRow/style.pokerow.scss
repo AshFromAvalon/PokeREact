@@ -7,8 +7,142 @@
 .split {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 700px) {
+  .row {
+    padding: 1rem 2rem;
+  }
+  .split {
+    flex-direction: column;
+  }
+}
+
+//
+// POKE CARD
+//
+.card-container {
+  max-width: 36%;
+  min-width: 250px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0px 0px 30px -5px rgb(0 0 0 / 10%);
+}
+
+.card h2,
+p {
+  margin: 0.2em 0;
 }
 
 .card-image {
   max-width: 100px;
+}
+
+.card-name {
+  font-size: 1.625rem;
+  font-weight: 600;
+}
+
+.card-description {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.card-type-list {
+  display: flex;
+  margin: 1em 0;
+}
+
+.card-type-list li:not(:first-child) {
+  margin-left: 0.5em;
+}
+
+.card-type {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.card-specs {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+//
+// POKE STAT
+//
+
+.stats {
+  flex: 1;
+}
+
+// @media (max-width: 900px) {
+//   .stats {
+//     display: none;
+//   }
+// }
+
+.stat-split {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 3em;
+  font-size: 1.2rem;
+  ul:not(:first-child) {
+    margin-left: 2em;
+  }
+  li {
+    margin-top: 1em;
+  }
+}
+
+.stat-names {
+  text-align: right;
+  font-size: 1.2rem;
+  color: grey;
+  font-weight: 500;
+
+  .stat-name {
+    margin: 1em 0;
+  }
+}
+
+.stat-names {
+  text-align: right;
+  color: grey;
+  font-weight: 500;
+}
+
+.stat-gauges {
+  width: 50%;
+
+  .gauge-container {
+    height: 1.2rem;
+    display: flex;
+    align-items: center;
+    div {
+      height: 85%;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    .bg-gauge {
+      width: 100%;
+      position: relative;
+      background-color: #eae8e7;
+      .gauge {
+        position: absolute;
+        height: 100%;
+      }
+    }
+  }
 }
