@@ -22,8 +22,16 @@
 // POKE CARD
 //
 .card-container {
+  flex: 1;
   max-width: 36%;
   min-width: 250px;
+  &:hover {
+    cursor: pointer;
+    .card-image {
+      max-width: 130px;
+      transition: max-width 0.3s;
+    }
+  }
 }
 
 .card {
