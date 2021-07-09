@@ -11,3 +11,11 @@
   background-color: white;
   box-shadow: 12px 0px 27px -15px rgb(0 0 0 / 19%);
 }
+
+@media (max-width: 900px) {
+  .nav {
+    flex-direction: row;
+    min-height: 5%;
+    width: 100%;
+  }
+}

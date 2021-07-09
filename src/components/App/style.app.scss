@@ -7,7 +7,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 
   header,
   footer {
@@ -17,10 +17,23 @@
 
   .main-container {
     display: flex;
-    height: 80%;
+    height: 90%;
     .list {
       overflow-y: auto;
       width: 80%;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .main {
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+    .main-container {
+      flex-direction: column;
+      .list {
+        width: 100%;
+      }
     }
   }
 }

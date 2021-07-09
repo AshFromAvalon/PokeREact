@@ -85,7 +85,7 @@ function App() {
 
   return (
     <main className="main">
-      <header>POKEMON</header>
+      {/* <header>POKEMON</header> */}
       <div className="main-container">
         <NavBar>
           {types.map((type) => {
@@ -119,7 +119,7 @@ function App() {
           })}
         </ul>
       </div>
-      <footer>POKEMON</footer>
+      {/* <footer>POKEMON</footer> */}
     </main>
   );
 }

@@ -9,7 +9,7 @@
   justify-content: space-between;
   align-items: center;
 }
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .row {
     padding: 1rem 2rem;
   }
@@ -31,6 +31,12 @@
       max-width: 130px;
       transition: max-width 0.3s;
     }
+  }
+}
+
+@media (max-width: 900px) {
+  .card-container {
+    min-width: 100%;
   }
 }
 
@@ -93,11 +99,11 @@ p {
   flex: 1;
 }
 
-// @media (max-width: 900px) {
-//   .stats {
-//     display: none;
-//   }
-// }
+@media (max-width: 900px) {
+  .stats {
+    display: none;
+  }
+}
 
 .stat-split {
   display: flex;
@@ -114,19 +120,12 @@ p {
 
 .stat-names {
   text-align: right;
-  font-size: 1.2rem;
   color: grey;
   font-weight: 500;
 
   .stat-name {
     margin: 1em 0;
   }
-}
-
-.stat-names {
-  text-align: right;
-  color: grey;
-  font-weight: 500;
 }
 
 .stat-gauges {
