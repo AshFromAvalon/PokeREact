@@ -1,0 +1,63 @@
+@import "../../style/styles.scss";
+//
+// POKE STAT
+//
+
+.stats {
+  flex: 1;
+}
+
+@media (max-width: 900px) {
+  .stats {
+    display: none;
+  }
+}
+
+.stat-split {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 3em;
+  font-size: 1.2rem;
+  ul:not(:first-child) {
+    margin-left: 2em;
+  }
+  li {
+    margin-top: 1em;
+  }
+}
+
+.stat-names {
+  text-align: right;
+  color: grey;
+  font-weight: 500;
+
+  .stat-name {
+    margin: 1em 0;
+  }
+}
+
+.stat-gauges {
+  width: 50%;
+
+  .gauge-container {
+    height: 1.2rem;
+    display: flex;
+    align-items: center;
+    div {
+      height: 85%;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    .bg-gauge {
+      width: 100%;
+      position: relative;
+      background-color: #eae8e7;
+      .gauge {
+        position: absolute;
+        height: 100%;
+      }
+    }
+  }
+}

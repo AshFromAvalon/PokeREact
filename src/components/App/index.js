@@ -77,8 +77,22 @@ function App() {
   if (isLoading) {
     return (
       <main className="main">
-        <h1>POKEMON</h1>
-        <p>LOADING...</p>
+        {/* <header>POKEMON</header> */}
+        <div className="main-container">
+          <NavBar>
+            {types.map((type) => {
+              return (
+                <button
+                  className="btn"
+                  style={{ color: colorMap[type.name] || colorMap.default }}
+                >
+                  {type.name}
+                </button>
+              );
+            })}
+          </NavBar>
+        </div>
+        {/* <footer>POKEMON</footer> */}
       </main>
     );
   }

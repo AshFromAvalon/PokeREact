@@ -1,0 +1,49 @@
+@import "../../style/styles.scss";
+.stats-loader {
+  flex: 1;
+}
+
+@media (max-width: 900px) {
+  .stats-loader {
+    display: none;
+  }
+}
+
+.stat-split-loader {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 3em;
+  font-size: 1.2rem;
+  ul:not(:first-child) {
+    margin-left: 2em;
+  }
+  li {
+    margin-top: 1em;
+  }
+}
+
+.stat-gauges-loader {
+  width: 50%;
+
+  .gauge-container-loader {
+    height: 1.2rem;
+    display: flex;
+    align-items: center;
+    div {
+      height: 85%;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    .bg-gauge-loader {
+      width: 100%;
+      position: relative;
+      background-color: #eae8e7;
+      .gauge-loader {
+        position: absolute;
+        height: 100%;
+      }
+    }
+  }
+}

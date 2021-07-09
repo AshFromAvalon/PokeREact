@@ -1,0 +1,73 @@
+@import "../../style/styles.scss";
+//
+// POKE CARD
+//
+.card-container {
+  flex: 1;
+  max-width: 36%;
+  min-width: 250px;
+  &:hover {
+    cursor: pointer;
+    .card-image {
+      max-width: 130px;
+      transition: max-width 0.3s;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .card-container {
+    width: 100%;
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0px 0px 30px -5px rgb(0 0 0 / 10%);
+}
+
+.card h2,
+p {
+  margin: 0.2em 0;
+}
+
+.card-image {
+  max-width: 100px;
+}
+
+.card-name {
+  font-size: 1.625rem;
+  font-weight: 600;
+}
+
+.card-description {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.card-type-list {
+  display: flex;
+  margin: 1em 0;
+}
+
+.card-type-list li:not(:first-child) {
+  margin-left: 0.5em;
+}
+
+.card-type {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.card-specs {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}

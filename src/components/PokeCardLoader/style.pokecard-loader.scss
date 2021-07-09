@@ -1,0 +1,85 @@
+@import "../../style/styles.scss";
+.card-container-loader {
+  flex: 1;
+  height: 300px;
+  max-width: 36%;
+  min-width: 250px;
+  &:hover {
+    cursor: pointer;
+    .card-image-loader {
+      max-width: 130px;
+      transition: max-width 0.3s;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .card-container {
+    width: 100%;
+  }
+}
+
+.card-loader {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0px 0px 30px -5px rgb(0 0 0 / 10%);
+}
+
+.card-loader h2,
+p {
+  margin: 0.2em 0;
+}
+
+.card-image-loader {
+  max-width: 100px;
+  opacity: 12%;
+}
+
+.card-name-loader {
+  height: 1.625rem;
+  width: 150px;
+  background-color: $clr-placeholder;
+}
+
+.card-description-loader {
+  height: 0.9rem;
+  width: 100px;
+  background-color: $clr-placeholder;
+}
+
+.card-type-list-loader {
+  display: flex;
+  margin: 1em 0;
+}
+
+.card-type-list-loader li:not(:first-child) {
+  margin-left: 0.5em;
+  height: 0.9rem;
+  width: 100px;
+  background-color: $clr-placeholder;
+}
+
+.card-type-loader {
+  height: 0.9rem;
+  width: 70px;
+  background-color: $clr-placeholder;
+}
+
+.card-specs-loader {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  p {
+    height: 0.9rem;
+    width: 40px;
+    background-color: $clr-placeholder;
+  }
+}
