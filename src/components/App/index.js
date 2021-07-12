@@ -1,9 +1,10 @@
 import "./style.app.scss";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import axios from "axios";
 import NavBar from "../NavBar";
 import PokeRow from "../PokeRow/index";
 import colors from "../../utils/typesColors";
+import useIsMobile from "../../hooks/useIsMobile";
 
 const TYPES = [
   { name: "grass", isSelected: false },
@@ -30,6 +31,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [types, setTypes] = useState(TYPES);
   const [selectedType, setSelectedType] = useState(null);
+  const listElem = useRef(null);
+  const isMobile = useIsMobile();
 
   const colorMap = colors;
 
@@ -47,6 +50,13 @@ function App() {
   }, []);
 
   const handleSelect = (selection) => {
+    if (isMobile) {
+      listElem.current.scrollIntoView({
+        inline: "center",
+        behavior: "smooth",
+      });
+    }
+
     const typesCopy = [...types];
     const selectedType = typesCopy.find((type) => type.name === selection);
     const currentSelectedType = typesCopy.find(
@@ -83,6 +93,7 @@ function App() {
             {types.map((type) => {
               return (
                 <button
+                  key={type.name}
                   className="btn"
                   style={{ color: colorMap[type.name] || colorMap.default }}
                 >
@@ -105,6 +116,7 @@ function App() {
           {types.map((type) => {
             return (
               <button
+                ref={listElem}
                 onClick={() => handleSelect(type.name)}
                 className={type.isSelected ? "btn btn-active" : "btn"}
                 key={type.name}

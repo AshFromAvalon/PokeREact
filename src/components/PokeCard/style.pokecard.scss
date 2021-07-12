@@ -4,8 +4,8 @@
 //
 .card-container {
   flex: 1;
-  max-width: 36%;
-  min-width: 250px;
+  width: 33%;
+  max-width: 360px;
   &:hover {
     cursor: pointer;
     .card-image {
@@ -17,6 +17,9 @@
 
 @media (max-width: 900px) {
   .card-container {
+    max-width: 100%;
+  }
+  .card {
     width: 100%;
   }
 }

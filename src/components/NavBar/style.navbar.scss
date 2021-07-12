@@ -3,7 +3,7 @@
 .nav {
   z-index: 100;
   width: 20%;
-  min-width: 7.5rem;
+  max-width: 200px;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -12,10 +12,11 @@
   box-shadow: 12px 0px 27px -15px rgb(0 0 0 / 19%);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .nav {
     flex-direction: row;
     min-height: 60px;
     width: 100%;
+    max-width: 100%;
   }
 }
