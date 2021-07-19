@@ -31,6 +31,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [types, setTypes] = useState(TYPES);
   const [selectedType, setSelectedType] = useState(null);
+  const [offset, setOffset] = useState(0);
+  const [limit, setLimit] = useState(20);
   const listElem = useRef(null);
   const isMobile = useIsMobile();
 
@@ -40,14 +42,13 @@ function App() {
     const fecthData = async () => {
       // Retreive list of pokemon
       let pokemonList = await axios.get(
-        "https://pokeapi.co/api/v2/pokemon?limit=151"
+        `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${1118}`
       );
-
       setPokemons(pokemonList.data);
       setIsLoading(false);
     };
     fecthData();
-  }, []);
+  }, [offset, limit]);
 
   const handleSelect = (selection) => {
     if (isMobile) {
@@ -108,9 +109,23 @@ function App() {
     );
   }
 
+  const handleNext = () => {
+    if (offset === pokemons.count) return;
+    const limitIncr = limit + 20 > pokemons.count ? pokemons.count - limit : 20;
+    setOffset(offset + limitIncr);
+  };
+  const handlePrevious = () => {
+    if (offset === 0) return;
+    setOffset(offset - 20);
+  };
   return (
     <main className="main">
       {/* <header>POKEMON</header> */}
+      <div>
+        <p>{pokemons.count - offset}</p>
+        <button onClick={handlePrevious}>Previous</button>
+        <button onClick={handleNext}>Next</button>
+      </div>
       <div className="main-container">
         <NavBar>
           {types.map((type) => {
